@@ -7,7 +7,7 @@ import { TodoIcon } from "../Icons/TodoIcon"
 
 export const TaskCompnent = () => {
     return <div>
-        <div className="border border-gray-800 rounded-lg mt-6">
+        <div className="border-2 border-gray-300 rounded-lg mt-6 ">
             <div className="text-black flex gap-9 p-4">
                 <span className="flex gap-2 items-center py-2 px-4 rounded bg-orange-400">
                     <SchedularIcon />
