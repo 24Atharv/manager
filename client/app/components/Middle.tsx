@@ -1,3 +1,4 @@
+import { LowerSpan } from "./LowerSpan"
 import { MiddleCard } from "./MiddleCard"
 import { MiddleSlider } from "./MiddleSlider"
 import { MiddleSpan } from "./MiddleSpan"
@@ -22,6 +23,7 @@ export const Middle = () => {
         <MiddleSpan />
         </div>
         <MiddleSlider />
+        <LowerSpan />
     </div>
 }
 
