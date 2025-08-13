@@ -1,7 +1,8 @@
-import { Footer } from "./footer"
 import { HeroSpan } from "./HeroSpan"
 import { Navbar } from "./Navbar"
 import { TaskCompnent } from "./TaskComponent"
+import { Footer } from "./Footer"
+import { Middle } from "./Middle"
 
 export const Dashboard = () => {
     return <div className="">
@@ -9,6 +10,7 @@ export const Dashboard = () => {
             <Navbar />
             <HeroSpan />
             <TaskCompnent />
+            <Middle />
             <Footer />
         </div>
     </div>
