@@ -6,7 +6,7 @@ import leafSvg from '../assets/leaf.svg'
 export const LeafIcon = () => {
     return (
         <div>
-            <Image src={leafSvg} alt="LeafIcon" className="w-10 h-10" />
+            <Image src={leafSvg} alt="LeafIcon" className="w-10 h-7" />
         </div>
     );
 };
