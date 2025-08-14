@@ -12,8 +12,14 @@ export const HeroSpan = () => {
         </span>
         <span className="text-gray-600">Manage tasks, organize links, take notes, and track time — all in one place. Join 250+ users optimizing their time with tymeline.</span>
         <div className="flex gap-4 items-center">
-            <span className="text-xl border border-gray-400 py-2 px-4 font-light rounded-lg text-white bg-orange-400">Get Started</span>
-            <span className="text-xl border border-gray-400 py-2 px-4 font-light rounded-lg text-black">Learn More</span>
+            <span className="text-xl cursor-pointer border border-gray-400 py-2 px-4 font-light rounded-lg text-white
+             bg-orange-400 hover:shadow-2xl">
+                Get Started
+            </span>
+            <span className="text-xl cursor-pointer border border-gray-400 py-2 px-4 font-light rounded-lg
+             text-black hover:shadow-2xl">
+                Learn More
+            </span>
         </div>
     </div>
 }
