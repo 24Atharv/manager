@@ -1,5 +1,5 @@
 export const MiddleSpan = () => {
-    return <div className="mt-18 flex flex-col gap-10 items-center text-center justify-center">
+    return <div className="mt-18 flex flex-col gap-10 items-center">
         <span>Wave goodbye to
             <span className="text-red-400"> disorganized workflows</span>
         </span>
