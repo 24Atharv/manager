@@ -6,8 +6,8 @@ import { TwitterIcon } from "../Icons/TwitterIcon"
 export const Footer = () => {
     return <div className="mt-9">
         <hr className="border border-gray-800" />
-        <div className="flex gap-3 justify-between mt-2 items-center">
-        <Image src={leafSvg} alt="leafIcon" className="w-14 h-14" />
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-between mt-2 items-center">
+        <Image src={leafSvg} alt="leafIcon" className="w-10 h-10" />
         <span className="text-gray-800">© 2025 Tymeline, LLC. All rights reserved.</span>
         <span className="flex gap-1">
             <GithubIcon />
