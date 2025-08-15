@@ -7,6 +7,7 @@ import { userSchema } from '../zodSchema.js'
 import { PrismaClient } from '@prisma/client'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import { userMiddleware } from '../middlewares/user.js';
 const prisma = new PrismaClient()
 const userRouter = Router()
 const app = express()
