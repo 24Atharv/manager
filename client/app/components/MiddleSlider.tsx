@@ -3,16 +3,16 @@ import notesIcon from '../assets/notes.svg'
 import { ManagementIcon } from "../Icons/managementIcon"
 import doneButton from '../assets/done-button.svg'
  
-const defaultStyles = "text-black flex flex-col gap-5 mt-10 p-6 w-102 border border-gray-400 rounded-lg"
+const defaultStyles = "text-black flex flex-col flex-1 gap-2 h-fit w-[350px] sm:gap-5 mt-10 p-6 sm:w-102 border border-gray-400 rounded-lg"
 const spanStyles = "flex gap-3 items-center text-center"
-const imageStyle = "size-10 text-black"
+const imageStyle = "size-6 sm:size-10 text-black"
 
 export const MiddleSlider = () => {
-    return <div className="flex gap-10">
+    return <div className="flex flex-col sm:flex-row sm:gap-10">
         <div className={defaultStyles}>
             <span className={spanStyles}>
                 <ManagementIcon />
-                <span className="text-2xl">Link Management</span>
+                <span className="text-lg sm:text-2xl">Link Management</span>
             </span>
             <span className="text-gray-800">Never lose important bookmarks with smart categorization, easy retrieval, and tagging.</span>
         </div>
