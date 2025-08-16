@@ -33,4 +33,24 @@ taskRouter.post("/task", userMiddleware, async (req, res) => {
     }
 })
 
+taskRouter.get("/tasks", userMiddleware, async(req, res) => {
+    try {
+        const taskOfUser = await prisma.task.findMany({
+            where: {
+                // @ts-ignore
+                userId: req.userId
+            }
+        })
+        res.status(200).json({
+            message: taskOfUser
+        })
+        
+    } catch(err) {
+        console.log(err)
+        res.status(403).json({
+            message: "Not exist tasks"
+        })
+    }
+})
+
 export default taskRouter
