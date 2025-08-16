@@ -7,5 +7,5 @@ app.use(express.json())
 app.use("/auth", userRouter);
 app.use("/user", taskRouter);
 
-app.listen(3000, () => console.log("Server start"));
+app.listen(4000, () => console.log("Server start"));
 
