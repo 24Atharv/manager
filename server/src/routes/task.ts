@@ -8,6 +8,29 @@ import { PrismaClient } from '@prisma/client';
 import { userMiddleware } from '../middlewares/user.js';
 const prisma = new PrismaClient()
 
+taskRouter.post("/task", userMiddleware, async (req, res) => {
+    const { title, description, status } = req.body;
 
+    try {
+        const task = await prisma.task.create({
+            data: {
+                title: title,
+                description: description,
+                status: status,
+                // @ts-ignore
+                userId: req.userId
+            }
+        })
+        res.status(200).json({
+            message: task
+        })
+    }
+    catch (err) {
+        console.log(err);
+        res.status(400).json({
+            err
+        })
+    }
+})
 
 export default taskRouter

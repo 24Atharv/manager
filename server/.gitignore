@@ -40,3 +40,15 @@ yarn-error.log*
 next-env.d.ts
 
 /src/generated/prisma
+
+#     {
+#     "name": "ak jamin",
+#     "email": "akgamin@gmail.com",
+#     "password": "1238654321"
+# }
+
+# {
+#   "title": "Finish Prisma Setup",
+#   "description": "Set up Prisma schema and generate client",
+#   "status": "PENDING"
+# }
