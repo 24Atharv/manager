@@ -1,4 +1,4 @@
-export default function signin() {
+export default function Login() {
     return <div className="flex flex-col gap-5 justify-center items-center">
         <div className="flex flex-col text-center mt-8">
             <span className="text-3xl">Log in to your account</span>
