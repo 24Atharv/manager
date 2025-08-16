@@ -103,4 +103,25 @@ taskRouter.put("/task/:id", userMiddleware, async (req, res) => {
     }
 })
 
+taskRouter.delete("/tasks/:id", userMiddleware, async (req, res) => {
+    const taskId = req.params.id;
+
+    try {
+        const deleteTask = await prisma.task.delete({
+            where: {
+                // @ts-ignore
+                id: parseInt(taskId)
+            }
+        })
+        res.status(200).json({
+            message: "Deleted Task"
+        })
+    } catch (err) {
+        console.log(err);
+        res.status(403).json({
+            message: "error occur"
+        })
+    }
+})
+
 export default taskRouter
