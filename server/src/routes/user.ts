@@ -41,8 +41,10 @@ userRouter.post("/signup", async (req, res) => {
                 password: hashpassword
             }
         })
+        console.log(user);
 
         if (user) {
+            console.log("create");
             res.status(200).json({
                 message: "Signup succeded"
             })
@@ -65,6 +67,7 @@ userRouter.post("/login", async (req, res) => {
             email: email
         }
     })
+    console.log(user);
 
     if (user) {
         const isValidate = await bcrypt.compare(password, user.password);

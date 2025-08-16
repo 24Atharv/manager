@@ -8,7 +8,7 @@ export default function Signup() {
   const [password, setPassword] = useState("");
 
   async function authHandler() {
-    const res = await fetch('http://localhost:3000/auth/signup', {
+    const res = await fetch('http://localhost:4000/auth/signup', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ name, email, password })
