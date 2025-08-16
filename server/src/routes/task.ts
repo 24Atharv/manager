@@ -53,4 +53,26 @@ taskRouter.get("/tasks", userMiddleware, async(req, res) => {
     }
 })
 
+taskRouter.get("/task/:id", userMiddleware, async (req, res) => {
+    const taskId  = req.params.id
+    try {
+        const taskOfUser = await prisma.task.findFirst({
+            where: {
+                // @ts-ignore
+                id: parseInt(taskId)
+            }
+        })
+
+        res.status(200).json({
+            message: taskOfUser
+        })
+    }
+    catch(err) {
+        res.status(403).json({
+            message: "Not exist"
+        })
+        console.log(err)
+    }
+})
+
 export default taskRouter
