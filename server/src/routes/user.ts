@@ -25,7 +25,7 @@ userRouter.post("/signup", async (req, res) => {
     if (!parsedResult.success) {
         console.log(parsedResult.error.format())
         return res.status(403).json({
-            message: "Invalid credentials"            
+            message: "Invalid credentials"
         })
     }
 
@@ -93,5 +93,24 @@ userRouter.post("/login", async (req, res) => {
     }
 })
 
+userRouter.get("/me", userMiddleware, async (req, res) => {
+    try {
+        const userData = await prisma.user.findFirst({
+            where: {
+                // @ts-ignore
+                id: req.userId
+            },
+        })
+        res.status(200).json({
+            userData,
+            message: "User Details"
+        })
+    } catch (err) {
+        console.log(err)
+        res.status(403).json({
+            err
+        })
+    }
+})
 
 export default userRouter
