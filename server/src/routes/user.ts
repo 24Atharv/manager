@@ -77,7 +77,7 @@ userRouter.post("/login", async (req, res) => {
 
         if (isValidate) {
             const token = jwt.sign({
-                id: user.id
+                userId: user.id
             }, JWT_SECRET)
 
             res.status(200).json({

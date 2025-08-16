@@ -22,11 +22,17 @@ model User {
   createdAt DateTime @default(now())
 }
 
+enum TaskStatus {
+  PENDING
+  COMPLETED
+  IN_PROGRESS
+}
+
 model Task {
   id          Int      @id @default(autoincrement())
   title       String
   description String?
-  status      String   @default("pending") // pending, completed, etc.
+  status      TaskStatus   @default(PENDING) // pending, completed, etc.
   userId      Int
   user        User     @relation(fields: [userId], references: [id])
   createdAt   DateTime @default(now())
