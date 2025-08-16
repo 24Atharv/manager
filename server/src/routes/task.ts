@@ -33,7 +33,7 @@ taskRouter.post("/task", userMiddleware, async (req, res) => {
     }
 })
 
-taskRouter.get("/tasks", userMiddleware, async(req, res) => {
+taskRouter.get("/tasks", userMiddleware, async (req, res) => {
     try {
         const taskOfUser = await prisma.task.findMany({
             where: {
@@ -44,8 +44,8 @@ taskRouter.get("/tasks", userMiddleware, async(req, res) => {
         res.status(200).json({
             message: taskOfUser
         })
-        
-    } catch(err) {
+
+    } catch (err) {
         console.log(err)
         res.status(403).json({
             message: "Not exist tasks"
@@ -54,7 +54,7 @@ taskRouter.get("/tasks", userMiddleware, async(req, res) => {
 })
 
 taskRouter.get("/task/:id", userMiddleware, async (req, res) => {
-    const taskId  = req.params.id
+    const taskId = req.params.id
     try {
         const taskOfUser = await prisma.task.findFirst({
             where: {
@@ -67,11 +67,39 @@ taskRouter.get("/task/:id", userMiddleware, async (req, res) => {
             message: taskOfUser
         })
     }
-    catch(err) {
+    catch (err) {
         res.status(403).json({
             message: "Not exist"
         })
         console.log(err)
+    }
+})
+
+taskRouter.put("/task/:id", userMiddleware, async (req, res) => {
+    const taskId = req.params.id   // It is string here. You need to convert it into Number
+    const { title, description, status } = req.body
+
+    try {
+        const updateTask = await prisma.task.update({
+            where: {
+                // @ts-ignore
+                id: parseInt(taskId)
+            },
+            data: {
+                title: title,
+                description: description,
+                status: status
+            }
+        })
+        res.status(200).json({
+            updateTask
+        })
+    }
+    catch (err) {
+        res.status(403).json({
+            err,
+            message: "Not created"
+        })
     }
 })
 
